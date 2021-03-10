@@ -1,0 +1,1 @@
+export {IonRangeSlider} from "./extensions_ion_range_slider"
