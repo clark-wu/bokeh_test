@@ -8,5 +8,6 @@
   "dependencies": {
     "@bokeh/bokehjs": "^2.3.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "main": "dist/custom_model.min.js"
 }

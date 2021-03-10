@@ -10,7 +10,7 @@ class IonRangeSlider(InputWidget):
     # side of the custom extension model or a string name of a file with the implementation.
 
     __javascript__ = [
-        "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js",
+        "https://code.jquery.com/jquery-3.1.1.min.js",
         "https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.1.4/js/ion.rangeSlider.js",
     ]
     __css__ = [
