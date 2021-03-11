@@ -6,8 +6,8 @@ from bokeh.command.util import build_single_handler_application
 from bokeh.server.server import Server
 
 application = build_single_handler_application(os.path.join(os.path.dirname(__file__), "bkapp"))
-server = Server({'/bkapp': application},
-                num_procs=1,static_path=os.path.join(os.path.dirname(__file__), "static"))
+#server = Server({'/bkapp': application},num_procs=1,static_path=os.path.join(os.path.dirname(__file__), "static"))
+server = Server({'/bkapp': application},num_procs=1)
 server.start()
 
 if __name__ == '__main__':
