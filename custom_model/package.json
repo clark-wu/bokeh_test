@@ -6,7 +6,7 @@
   "keywords": [],
   "repository": {},
   "dependencies": {
-    "@bokeh/bokehjs": "^2.3.0"
+    "@bokeh/bokehjs": "^2.2.3"
   },
   "devDependencies": {},
   "main": "dist/custom_model.min.js"

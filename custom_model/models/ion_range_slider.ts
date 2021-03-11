@@ -88,6 +88,7 @@ export class IonRangeSlider extends InputWidget {
   constructor(attrs?: Partial<IonRangeSlider.Attrs>) {
     super(attrs)
   }
+  static __module__ = "custom_model.models.ion_range_slider"
 
   static init_IonRangeSlider(): void {
     // If there is an associated view, this is boilerplate.
