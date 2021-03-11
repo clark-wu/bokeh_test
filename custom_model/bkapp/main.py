@@ -9,10 +9,11 @@ from bokeh.application import Application
 from bokeh.core.properties import Bool, Float, Tuple
 from bokeh.io import show, curdoc
 from bokeh.layouts import column
-from bokeh.models import ColumnDataSource, CustomJS, InputWidget, Slider
+from bokeh.models import ColumnDataSource, CustomJS, InputWidget, Slider, CustomAction
 from bokeh.plotting import Figure
 from bokeh.server.server import Server
 from custom_model.models.ion_range_slider import IonRangeSlider
+from custom_model.models.param_tool import ParamTool
 
 x = [x * 0.005 for x in range(2, 198)]
 y = x
@@ -21,6 +22,7 @@ source = ColumnDataSource(data=dict(x=x, y=y))
 
 plot = Figure(plot_width=400, plot_height=400)
 plot.line('x', 'y', source=source, line_width=3, line_alpha=0.6, color='#ed5565')
+plot.add_tools(ParamTool())
 
 callback_single = CustomJS(args=dict(source=source), code="""
             var data = source.data;
