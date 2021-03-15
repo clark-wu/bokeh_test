@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: [
-    './client/index.tsx',
+    './front/index.ts',
   ],
   module: {
     rules: [
@@ -12,7 +12,7 @@ module.exports = {
       },
       {
         test: /\.js?$/,
-        include: path.join(__dirname, './client/'),
+        include: path.join(__dirname, './front/'),
         use: [{
           loader: 'babel-loader',
           options: {
@@ -26,7 +26,7 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'reverse_bokeh/static/js'),
+    path: path.resolve(__dirname, 'dist'),
   },
   //mode: 'production',
   resolve: {

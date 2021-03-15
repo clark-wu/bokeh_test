@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "ES2020",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "es2017",
+    "lib": ["es2017", "dom", "dom.iterable"],
+    "sourceMap": true,
+    "jsx": "react",
+    "rootDirs": ["./front"],
+  },
+}
