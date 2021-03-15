@@ -5,7 +5,7 @@ export class ParamToolView extends ActionToolView {
   model: ParamTool
 
   doit(): void {
-    window.alert(this.plot_view.model.x_range.toString())
+    window.prompt("x_range:",this.plot_view.model.x_range.toString())
   }
 }
 
