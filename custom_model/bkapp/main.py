@@ -12,8 +12,10 @@ from bokeh.layouts import column
 from bokeh.models import ColumnDataSource, CustomJS, InputWidget, Slider, CustomAction
 from bokeh.plotting import Figure
 from bokeh.server.server import Server
+
+from custom_model.models.bokeh_events import MoveUpEvent
 from custom_model.models.ion_range_slider import IonRangeSlider
-from custom_model.models.param_tool import ParamTool
+from custom_model.models.move_up_tool import MoveUpTool
 
 x = [x * 0.005 for x in range(2, 198)]
 y = x
@@ -22,7 +24,11 @@ source = ColumnDataSource(data=dict(x=x, y=y))
 
 plot = Figure(plot_width=400, plot_height=400)
 plot.line('x', 'y', source=source, line_width=3, line_alpha=0.6, color='#ed5565')
-plot.add_tools(ParamTool())
+plot.add_tools(MoveUpTool())
+
+def move_up_callback(event):
+    print("adaddaad")
+plot.on_event(MoveUpEvent,move_up_callback)
 
 callback_single = CustomJS(args=dict(source=source), code="""
             var data = source.data;
