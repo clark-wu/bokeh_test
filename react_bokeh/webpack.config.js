@@ -1,14 +1,17 @@
 const path = require('path');
+const webpack = require('webpack')
 
 module.exports = {
-  entry: [
-    './front/index.tsx',
-  ],
+  entry: {
+    index: './front/index.tsx',
+    vendors: ["@bokeh/bokehjs"]
+  },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
+        exclude: /node_modules\/(?!@bokeh\/)/,
       },
       {
         test: /\.js?$/,
@@ -19,13 +22,13 @@ module.exports = {
             presets: ["es2015", "stage-0", "react"]
           }
         }],
-        exclude: /node_modules/,
+        exclude: /node_modules\/(?!@bokeh\/)/,
 
       },
     ],
   },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'backend/dist'),
   },
   //mode: 'production',
@@ -33,4 +36,9 @@ module.exports = {
     extensions: ['.js', '.ts','.tsx']
   },
   mode: "development",
+  devtool: 'eval-source-map',
+  plugins: [
+    new webpack.optimize.SplitChunksPlugin({
+      name: "bokeh",
+    })],
 };

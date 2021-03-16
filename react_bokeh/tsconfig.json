@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "module": "ES2020",
+    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "target": "es2017",
-    "lib": ["es2017", "dom", "dom.iterable"],
+    "lib": ["es2017", "dom", "dom.iterable","esnext"],
     "sourceMap": true,
     "jsx": "react",
+    "allowJs": true,
     "rootDirs": ["./front"],
   },
 }
