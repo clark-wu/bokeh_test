@@ -4,7 +4,6 @@ const webpack = require('webpack')
 module.exports = {
   entry: {
     index: './front/index.tsx',
-    vendors: ["@bokeh/bokehjs"]
   },
   module: {
     rules: [
@@ -37,8 +36,4 @@ module.exports = {
   },
   mode: "development",
   devtool: 'eval-source-map',
-  plugins: [
-    new webpack.optimize.SplitChunksPlugin({
-      name: "bokeh",
-    })],
 };
